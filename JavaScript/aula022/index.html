@@ -1,0 +1,63 @@
+<html>
+<body>
+    <style>
+        .conteudo h2 span{
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .conteudo p{
+            overflow: hidden;
+            height: 10px;
+            transition: 1s;
+        }
+        
+        .mostrar{ /* Class adcionada no JS */
+            height: 200px !important;
+        }
+    </style>
+    <div class="conteudo">
+        <h2>Titulo do Conteudo <span>Ver Mais!</span></h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit quaerat inventore id corporis numquam ad, aliquam nisi facilis! Saepe nesciunt ad quae ipsa architecto pariatur incidunt harum accusamus voluptate eligendi?Magni culpa sequi cum quos omnis architecto veniam a expedita, blanditiis neque ut, sed harum aliquid? Beatae velit reiciendis, cupiditate animi dolore ut. Repudiandae aliquid dignissimos eius ad error totam.</p>
+    </div>
+    <div class="conteudo">
+        <h2>Titulo do Conteudo <span>Ver Mais!</span></h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit quaerat inventore id corporis numquam ad, aliquam nisi facilis! Saepe nesciunt ad quae ipsa architecto pariatur incidunt harum accusamus voluptate eligendi?Magni culpa sequi cum quos omnis architecto veniam a expedita, blanditiis neque ut, sed harum aliquid? Beatae velit reiciendis, cupiditate animi dolore ut. Repudiandae aliquid dignissimos eius ad error totam.</p>
+    </div>
+    <div class="conteudo">
+        <h2>Titulo do Conteudo <span>Ver Mais!</span></h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit quaerat inventore id corporis numquam ad, aliquam nisi facilis! Saepe nesciunt ad quae ipsa architecto pariatur incidunt harum accusamus voluptate eligendi?Magni culpa sequi cum quos omnis architecto veniam a expedita, blanditiis neque ut, sed harum aliquid? Beatae velit reiciendis, cupiditate animi dolore ut. Repudiandae aliquid dignissimos eius ad error totam.</p>
+    </div>
+    <div class="conteudo">
+        <h2>Titulo do Conteudo <span>Ver Mais!</span></h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit quaerat inventore id corporis numquam ad, aliquam nisi facilis! Saepe nesciunt ad quae ipsa architecto pariatur incidunt harum accusamus voluptate eligendi?Magni culpa sequi cum quos omnis architecto veniam a expedita, blanditiis neque ut, sed harum aliquid? Beatae velit reiciendis, cupiditate animi dolore ut. Repudiandae aliquid dignissimos eius ad error totam.</p>
+    </div>
+    <script>
+        // Variavel *spans* recebe todos os span's da class conteudo 
+        var spans = document.querySelectorAll('.conteudo span')
+        
+        // forEach utilizado para executar a função dos elementos 
+        // função declarada
+        spans.forEach(function(span){
+            // Adicionando o evento de click na função
+            span.addEventListener('click', function(){
+
+                // busca o proximo elemento, irmão do elemento do pai do elemento que foi clicado   
+                var conteudo = this.parentElement.nextElementSibling
+                
+                if(conteudo.classList.contains('mostrar')){
+                // Se tiver, seleciona a class 'mostrar', Altera o texto para 'Ver mais!' e Remove a classe 'mostrar'
+                    this.innerHTML = 'Ver mais!'
+                    conteudo.classList.remove('mostrar')
+                }else{
+                //se não tiver a classe 'mostrar', Altera o texto para 'Ocultar' e adiciona a classe 'mostrar'
+                    this.innerHTML = 'Ocultar'
+                    conteudo.classList.add('mostrar')
+                }
+        })
+            
+     
+        })
+    </script>
+</body>
+</html>
