@@ -1,0 +1,60 @@
+<html>
+<body>
+    <script>
+        /*
+        {
+            //vai ficar definido apenas nesse scopo.
+            let nome = 'Vini'
+
+            let testes = function(){
+                console.log('Olá')
+            }
+
+            testes()
+        }
+        */
+        /*
+        const testes = (texto,par)=>{
+            par(texto)
+        }
+
+        testes('olá mundo',(texto)=>{
+            alert(texto)
+        })
+        */
+
+        /*
+        const arr = ['vini', 'joao', 'gay', 'leo', 'nego', 'ju']
+
+        const [a,b,...c] = arr
+
+        alert(c[3])
+       */
+
+
+        /*
+        var nomes = [
+            {
+                nome:'joao'
+            },
+            {
+                nome:'gay'
+            }
+        ]
+
+       const objetos = [...nomes,{
+        nome:'Vini'
+       }]
+
+       console.log(objetos)
+        */
+
+
+        function testes(...numero){
+            console.log(numero)
+        }
+
+        testes([1,2,3,4,5,6],{nome:'vini'})
+</script>
+</body>
+</html>
